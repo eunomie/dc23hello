@@ -20,7 +20,7 @@ jobs:
         id: meta
         uses: docker/metadata-action@v4.4.0
         with:
-          images: yvesbrissaud/dc23hello
+          images: ybdc23/dc23hello
           labels: org.opencontainers.image.revision=${{ env.SHA }}
           tags: latest
 
