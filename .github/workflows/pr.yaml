@@ -39,3 +39,10 @@ jobs:
           command: quickview,cves
           image: local://${{ steps.meta.outputs.tags }}
 
+      - name: Compare
+        uses: docker/scout-action@main
+        with:
+          command: compare
+          image: local://${{ steps.meta.outputs.tags }}
+          to: registry://${{ steps.meta.outputs.tags }}
+
