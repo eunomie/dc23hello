@@ -32,3 +32,10 @@ jobs:
           load: true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Check Image
+        uses: docker/scout-action@main
+        with:
+          command: quickview,cves
+          image: local://${{ steps.meta.outputs.tags }}
+
