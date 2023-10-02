@@ -34,13 +34,14 @@ jobs:
           labels: ${{ steps.meta.outputs.labels }}
 
       - name: Check Image
-        uses: docker/scout-action@main
+        uses: eunomie/scout-action@main
         with:
           command: quickview,cves
           image: local://${{ steps.meta.outputs.tags }}
+          organization: ybdc23
 
       - name: Compare
-        uses: docker/scout-action@main
+        uses: eunomie/scout-action@main
         with:
           command: compare
           image: local://${{ steps.meta.outputs.tags }}
